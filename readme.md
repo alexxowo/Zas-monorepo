@@ -1,4 +1,4 @@
-# Monorepo: [Nombre de tu Proyecto]
+# Monorepo: Zas
 
 Este repositorio utiliza una arquitectura de **Monorepo** para gestionar tanto el Frontend como el Backend en un solo lugar. Utilizamos **NPM Workspaces** para la gestión de dependencias y **Turborepo** para la orquestación de tareas.
 
