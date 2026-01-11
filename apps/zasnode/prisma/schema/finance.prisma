@@ -1,0 +1,55 @@
+model Payment {
+  id              String  @id @default(cuid())
+  amount          Decimal @db.Decimal(10, 2)
+  reference       String? // Opcional (Efectivo no tiene referencia)
+  paymentMethodId Int
+  orderId         String?
+  order           Order?   @relation(fields: [orderId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  // Relations
+  paymentMethod PaymentMethod @relation(fields: [paymentMethodId], references: [id])
+
+  @@map("Payments")
+}
+
+model PaymentMethod {
+  id     Int     @id @default(autoincrement())
+  name   String
+  active Boolean @default(true)
+  color  String?
+  icon   String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  createdBy String
+
+  // Relations
+  createdByUser User      @relation(fields: [createdBy], references: [id])
+  payments      Payment[]
+
+  @@map("PaymentMethods")
+
+
+}
+
+model Discount {
+  id           String        @id @default(cuid())
+  name         String
+  value        Decimal       @db.Decimal(10, 2)
+  active       Boolean       @default(true)
+  orderDetails OrderDetail[]
+
+  
+  @@map("Discounts")
+}
+
+model Tax {
+  id     String  @id @default(cuid())
+  name   String
+  value  Decimal @db.Decimal(10, 2)
+  active Boolean @default(true)
+
+  @@map("Taxes")
+}

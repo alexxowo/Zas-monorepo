@@ -1,0 +1,56 @@
+// --- MENÚ ---
+model Product {
+  id        String  @id @default(uuid())
+  name      String
+  
+  salePrice Decimal @db.Decimal(10, 2) @default(0) // Usar Decimal para dinero
+  priceBase Decimal @db.Decimal(10, 2) @default(0)
+  margin    Decimal @db.Decimal(10, 2) @default(0)
+  marginPercent Decimal @db.Decimal(10, 2) @default(0)
+
+  active    Boolean @default(true) // Para "borrar" platos sin romper historial
+  image     String?
+  description String?
+
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  orderDetails OrderDetail[]
+  categories ProductCategory[] // Apunta a la tabla intermedia
+
+  @@map("Products")
+}
+
+model Category{
+  id        String  @id @default(uuid())
+  name      String
+  active    Boolean @default(true)
+
+  color     String? @default("#000000")
+  icon      String?
+
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  products ProductCategory[] // Apunta a la tabla intermedia
+
+  @@map("Categories")
+}
+ 
+model ProductCategory {
+  productId  String @map("product_id")
+  categoryId String @map("category_id")
+  
+  product    Product  @relation(fields: [productId], references: [id])
+  category   Category @relation(fields: [categoryId], references: [id])
+  
+  assignedAt DateTime @default(now()) // Dato extra: cuándo se asignó
+  assignedBy String?  // Dato extra: usuario que lo asignó
+
+  @@id([productId, categoryId]) // Clave compuesta
+  @@map("ProductCategories")
+}
