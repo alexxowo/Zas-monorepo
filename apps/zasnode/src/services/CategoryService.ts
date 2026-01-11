@@ -1,8 +1,8 @@
 import { prisma } from "../config/prisma";
-import { CategoryWhereInput } from "../generated/prisma/models";
-import { BaseFilter } from "../models/BaseFilter";
-import { PagedResult } from "../models/internal/PagedResult";
-import { CategoryCrudApiModel, CreateApiModelFromCategory } from "../models/products/categories/CategoryCreateApiModel";
+import { CategoryWhereInput } from "@prisma/client/models";
+import { BaseFilter } from "@zas/models/BaseFilter";
+import { PagedResult } from "@zas/models/internal/PagedResult";
+import { CategoryCrudApiModel, CreateApiModelFromCategory } from "@zas/models/products/categories/CategoryCreateApiModel";
 
 export class CategoryService {
 

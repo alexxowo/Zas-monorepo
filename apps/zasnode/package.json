@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@zas/models": "*",
     "@asteasolutions/zod-to-openapi": "^8.4.0",
     "@prisma/client": "^6.19.1",
     "@types/bcrypt": "^6.0.0",

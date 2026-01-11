@@ -4,7 +4,7 @@
 
 import { z } from "zod";
 import { baseFilterSchema } from "../BaseFilter.schema";
-import { registry } from "../../docs/openApi";
+import { registry } from "../../../apps/zasnode/src/docs/openApi";
 
 export const productFilterBasicSchema = baseFilterSchema.extend({
     name: z.string().optional(),

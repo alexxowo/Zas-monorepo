@@ -1,9 +1,8 @@
 import { prisma } from "../config/prisma";
-import { PaymentMethodWhereInput, PaymentWhereInput } from "../generated/prisma/models";
-import { BaseFilter } from "../models/BaseFilter";
-import { CreateApiModelFromPayment, PaymentApiModel } from "../models/payments/PaymentCrudApiModel";
-import { PagedResult } from "../models/internal/PagedResult";
-import { PaymentMethodCrudApiModel, CreatePaymentMethodModelFromApi, CreateApiModelFromPaymentMethod } from "../models/payments/PaymentMethodCrudApiModel";
+import { BaseFilter } from "@zas/models/BaseFilter";
+import { PagedResult } from "@zas/models/internal/PagedResult";
+import { CreateApiModelFromPayment, CreateApiModelFromPaymentMethod } from "../helpers/ModelExtensions";
+import { PaymentApiModel } from "@zas/models/payments/PaymentCrudApiModel";
 
 export class PaymentService {
 

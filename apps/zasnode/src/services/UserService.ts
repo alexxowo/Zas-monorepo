@@ -1,8 +1,8 @@
 import { prisma } from "../config/prisma";
-import { CreateApiModelFromUser, UserApiModel } from "../models/auth/UserApiModel";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import { Role } from "../generated/prisma/enums";
+import { Role } from "@prisma/client/enums";
+import { CreateApiModelFromUser } from "../helpers/ModelExtensions";
 
 export class UserService {
   static async createUser(data: {

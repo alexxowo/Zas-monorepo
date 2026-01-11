@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { CustomerService } from "../services/CustomerService";
-import { CustomerCrudApiModel } from "../models/customers/CrustomerCrudApiModel";
-import { BaseFilter } from "../models/BaseFilter";
+import { CustomerCrudApiModel } from "@zas/models/customers/CrustomerCrudApiModel";
+import { BaseFilter } from "@zas/models/BaseFilter";
 
 export class CustomerController {
   static async createCustomer(req: Request, res: Response) {

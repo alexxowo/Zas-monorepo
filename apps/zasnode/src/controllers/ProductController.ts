@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { ProductService } from "../services/ProductService";
-import { CreateProductApiModel } from "../models/products/createProductApiModel";
-import { ProductFilterBasic } from "../models/products/ProductFilterBasic";
+import { CreateProductApiModel } from "@zas/models/products/createProductApiModel";
+import { ProductFilterBasic } from "@zas/models/products/ProductFilterBasic";
 
 
 export class ProductController {

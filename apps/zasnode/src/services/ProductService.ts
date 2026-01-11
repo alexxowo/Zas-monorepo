@@ -1,12 +1,12 @@
 import { prisma } from "../config/prisma";
-import { CreateProductApiModel } from "../models/products/createProductApiModel";
-import { ProductApiModel, ProductApiModelHelper } from "../models/products/productApiModel";
-import { Decimal } from "@prisma/client/runtime/library";
+import { CreateProductApiModel } from "@zas/models/products/createProductApiModel";
+import { ProductApiModel } from "@zas/models/products/productApiModel";
 import { GlobalService } from "./GlobalContext";
 import { calculateFinancials } from "../helpers/CalculateFinancials";
-import { ProductFilterBasic } from "../models/products/ProductFilterBasic";
-import { ProductWhereInput } from "../generated/prisma/models";
-import { PagedResult } from "../models/internal/PagedResult";
+import { ProductFilterBasic } from "@zas/models/products/ProductFilterBasic";
+import { ProductWhereInput } from "@prisma/client/models";
+import { PagedResult } from "@zas/models/internal/PagedResult";
+import { ProductApiModelHelper } from "../helpers/ModelExtensions";
 
 export class ProductService {
   static async createProduct(data: CreateProductApiModel) {

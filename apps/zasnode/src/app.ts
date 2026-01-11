@@ -19,7 +19,7 @@ app.use((req,res,next) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
   const lang = (req.headers['accept-language'] as string) || 'es';
 
-  let userId = undefined;
+  let userId: string | undefined;
   if(token) {
     const decoded = jwt.verify(token, process.env.JWT_PASS || 'secret') as { id: string, name: string, roles: string[] };
     userId = decoded.id;

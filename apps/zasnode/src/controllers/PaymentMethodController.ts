@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { PaymentMethodsService } from "../services/PaymentMethods";
-import { PaymentMethodCrudApiModel } from "../models/payments/PaymentMethodCrudApiModel";
-import { BaseFilter } from "../models/BaseFilter";
+import { PaymentMethodCrudApiModel } from "@zas/models/payments/PaymentMethodCrudApiModel";
+import { BaseFilter } from "@zas/models/BaseFilter";
 
 export class PaymentMethodController {
   static async createPaymentMethod(req: Request, res: Response) {

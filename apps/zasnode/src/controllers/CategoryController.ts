@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { CategoryService } from "../services/CategoryService";
-import { CategoryCrudApiModel } from "../models/products/categories/CategoryCreateApiModel";
-import { BaseFilter } from "../models/BaseFilter";
+import { CategoryCrudApiModel } from "@zas/models/products/categories/CategoryCreateApiModel";
+import { BaseFilter } from "@zas/models/BaseFilter";
 
 export class CategoryController {
   static async createCategory(req: Request, res: Response) {

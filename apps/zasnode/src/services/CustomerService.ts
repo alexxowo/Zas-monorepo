@@ -1,8 +1,9 @@
 import { prisma } from "../config/prisma";
-import { CustomerWhereInput } from "../generated/prisma/models";
-import { BaseFilter } from "../models/BaseFilter";
-import { CreateApiModelFromCustomer, CustomerCrudApiModel } from "../models/customers/CrustomerCrudApiModel";
-import { PagedResult } from "../models/internal/PagedResult";
+import { CustomerWhereInput } from "@prisma/client/models";
+import { BaseFilter } from "@zas/models/BaseFilter";
+import { CustomerCrudApiModel } from "@zas/models/customers/CrustomerCrudApiModel";
+import { PagedResult } from "@zas/models/internal/PagedResult";
+import { CreateApiModelFromCustomer } from "../helpers/ModelExtensions";
 
 export class CustomerService {
 
