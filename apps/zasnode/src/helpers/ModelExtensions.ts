@@ -3,7 +3,7 @@ import { CustomerCrudApiModel } from "@zas/models/customers/CrustomerCrudApiMode
 import { PaymentApiModel } from "@zas/models/payments/PaymentCrudApiModel";
 import { PaymentMethodCrudApiModel } from "@zas/models/payments/PaymentMethodCrudApiModel";
 import { ProductApiModel } from "@zas/models/products/productApiModel";
-import { Customer, Payment, PaymentMethod, Product, User } from "@prisma/client/client";
+import { Customer, Payment, PaymentMethod, Product, User } from "@zas/database";
 
 export function CreateApiModelFromUser(user: User, token?: string): UserApiModel {
   return {

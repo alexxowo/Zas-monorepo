@@ -4,7 +4,6 @@
 
 import { Decimal } from "@prisma/client/runtime/library";
 import { z } from "zod";
-import { registry } from "../../docs/openApi";
 
 export const productApiModelSchema = z.object({
     id: z.string(),
@@ -30,5 +29,3 @@ export const productApiModelSchema = z.object({
       description: "This is a product description",
     },
   });
-
-  registry.register('productApiModel', productApiModelSchema);
