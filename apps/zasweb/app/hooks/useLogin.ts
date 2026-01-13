@@ -14,12 +14,7 @@ export const useLogin = () => {
 
   return useMutation({
     mutationFn: loginRequest,
-    // Aquí conectamos React Query con Zustand
     onSuccess: (data: LoginResponse) => {
-      // 1. Guardamos en Zustand (y localStorage gracias al persist middleware)
-
-      console.log("Login api response: ", data);
-
       setLogin(data.user.token, {
         id: data.user.id,
         name: data.user.name,
@@ -27,13 +22,10 @@ export const useLogin = () => {
         token: data.user.token,
         roles: data.user.roles,
       });
-
-      // 2. Redirigimos
       navigate("/dashboard");
     },
     onError: (error) => {
       console.error("Error en login:", error);
-      // Aquí podrías disparar un toast notification global
     },
   });
 };

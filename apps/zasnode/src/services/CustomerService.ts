@@ -1,5 +1,5 @@
 import { prisma } from "../config/prisma";
-import { CustomerWhereInput } from "@prisma/client/models";
+import { CustomerWhereInput } from "@zas/database/native";
 import { BaseFilter } from "@zas/models/BaseFilter";
 import { CustomerCrudApiModel } from "@zas/models/customers/CrustomerCrudApiModel";
 import { PagedResult } from "@zas/models/internal/PagedResult";

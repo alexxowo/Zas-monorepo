@@ -4,7 +4,7 @@ import { ProductApiModel } from "@zas/models/products/productApiModel";
 import { GlobalService } from "./GlobalContext";
 import { calculateFinancials } from "../helpers/CalculateFinancials";
 import { ProductFilterBasic } from "@zas/models/products/ProductFilterBasic";
-import { ProductWhereInput } from "@prisma/client/models";
+import { ProductWhereInput } from "@zas/database/native";
 import { PagedResult } from "@zas/models/internal/PagedResult";
 import { ProductApiModelHelper } from "../helpers/ModelExtensions";
 

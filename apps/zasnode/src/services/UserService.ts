@@ -1,7 +1,7 @@
 import { prisma } from "../config/prisma";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import { Role } from "@prisma/client/enums";
+import { Role } from "@zas/database/enums";
 import { CreateApiModelFromUser } from "../helpers/ModelExtensions";
 
 export class UserService {

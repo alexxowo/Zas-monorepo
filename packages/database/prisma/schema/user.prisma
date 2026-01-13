@@ -1,0 +1,47 @@
+model User {
+  id       String @id @default(uuid())
+  username      String  @unique
+  name     String
+  email    String?
+  password String
+  roles    Role[] @default([WAITER])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  ordersCreated  Order[]         @relation("CreatedOrders")
+  ordersUpdated  Order[]         @relation("UpdatedOrders")
+  paymentMethods PaymentMethod[]
+
+  @@map("Users")
+}
+
+model Customer {
+  id            String  @id @default(uuid())
+  name          String
+  surname       String
+  identityValue String  @unique
+  address       String
+  phone         String
+  email         String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  orders Order[]
+
+  @@map("Customers")
+}
+
+model Table {
+  id     String  @id @default(uuid())
+  name   String
+  active Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("Tables")
+}

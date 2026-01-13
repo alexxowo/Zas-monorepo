@@ -2,9 +2,8 @@
 //Some schemas can't be generated due to direct or indirect missing dependencies:
 //paymentCrudApiModelSchema
 //paymentApiModelSchema
-import { Decimal } from "@prisma/client/runtime/library";
+import { Decimal } from "@zas/database/prisma"
 import { z } from "zod";
-import { registry } from "../../docs/openApi";
 
 export const paymentCrudApiModelSchema = z.object({
     id: z.string(),
@@ -39,6 +38,3 @@ export const paymentApiModelSchema = z.object({
       orderId: "123",
     },
   });
-
-registry.register('paymentCrudApiModel', paymentCrudApiModelSchema);
-registry.register('paymentApiModel', paymentApiModelSchema);

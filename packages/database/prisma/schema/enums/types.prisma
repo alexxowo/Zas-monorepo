@@ -1,0 +1,16 @@
+enum OrderStatus {
+  PENDING // Creada, el mesero está agregando items
+  IN_KITCHEN // Enviada a cocina (Comanda impresa)
+  READY // Cocina terminó, lista para llevar
+  SERVED // Entregada en la mesa
+  COMPLETED // Pagada y cerrada
+  CANCELLED // Anulada
+}
+
+enum Role {
+  ADMIN // Dueño / Gerente
+  MANAGER // Encargado
+  CASHIER // Cajero
+  WAITER // Mesero
+  KITCHEN // Cocinero (Para ver pantalla de cocina)
+}

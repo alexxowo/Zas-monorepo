@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "db:generate": "npm run generate --workspace=@zas/database"
   },
   "devDependencies": {
     "turbo": "^2.7.3"

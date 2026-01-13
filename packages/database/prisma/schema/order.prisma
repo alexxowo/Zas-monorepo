@@ -1,0 +1,44 @@
+model Order {
+  id              String      @id @default(cuid())
+  customerId      String?
+  tableId         String?
+  status          OrderStatus @default(PENDING)
+  createdByUserId String
+  updatedByUserId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  details  OrderDetail[]
+  payments Payment[]
+  customer Customer?     @relation(fields: [customerId], references: [id])
+
+  createdByUser User @relation("CreatedOrders", fields: [createdByUserId], references: [id])
+  updatedByUser User @relation("UpdatedOrders", fields: [updatedByUserId], references: [id])
+
+  @@map("Orders")
+}
+
+model OrderDetail {
+  id        String  @id @default(cuid())
+  orderId   String
+  productId String
+  notes     String? // Ej: "Término medio", "Sin hielo"
+
+  quantity    Int
+  unitPrice   Decimal
+  productName String
+
+  discountId String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  order    Order     @relation(fields: [orderId], references: [id])
+  product  Product   @relation(fields: [productId], references: [id])
+  discount Discount? @relation(fields: [discountId], references: [id])
+
+  @@map("OrderDetails")
+}

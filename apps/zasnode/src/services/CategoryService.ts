@@ -1,5 +1,5 @@
-import { prisma } from "../config/prisma";
-import { CategoryWhereInput } from "@prisma/client/models";
+import { prisma } from "@zas/database";
+import { CategoryWhereInput } from "@zas/database/native";
 import { BaseFilter } from "@zas/models/BaseFilter";
 import { PagedResult } from "@zas/models/internal/PagedResult";
 import { CategoryCrudApiModel, CreateApiModelFromCategory } from "@zas/models/products/categories/CategoryCreateApiModel";

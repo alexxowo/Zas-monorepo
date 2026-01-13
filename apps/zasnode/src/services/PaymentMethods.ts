@@ -1,5 +1,5 @@
 import { prisma } from "../config/prisma";
-import { PaymentMethodWhereInput } from "@prisma/client/models";
+import { PaymentMethodWhereInput } from "@zas/database/native";
 import { BaseFilter } from "@zas/models/BaseFilter";
 import { PagedResult } from "@zas/models/internal/PagedResult";
 import { GlobalService } from "./GlobalContext";
